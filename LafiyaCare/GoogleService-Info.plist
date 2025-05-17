@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>devcuit.net.LafiyaCare</string>
+	<string>devcuit.net.LafiyaCare-IOS</string>
 	<key>PROJECT_ID</key>
 	<string>lafiyacare-c9237</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:787945298456:ios:db6c8dd22e57dc15acc16d</string>
+	<string>1:787945298456:ios:d04b8e56974fe6fcacc16d</string>
 </dict>
 </plist>
