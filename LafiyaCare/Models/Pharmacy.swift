@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class Pharmacy: Codable{
+class Pharmacy: Codable, Identifiable{
     /*
      isEmergency
      name
@@ -21,5 +21,7 @@ class Pharmacy: Codable{
     var placeId:String?
     var phone:String?
     var rating:Double?
+    
+
     
 }

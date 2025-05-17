@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DDC502832DD7A9DE00559D83 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = DDC502822DD7A9DE00559D83 /* FirebaseAppDistribution-Beta */; };
-		DDC502852DD7A9DE00559D83 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DDC502842DD7A9DE00559D83 /* FirebaseDatabase */; };
+		DD45E62B2DD82A01002198C4 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = DD45E62A2DD82A01002198C4 /* FirebaseAppDistribution-Beta */; };
+		DD45E62D2DD82A01002198C4 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DD45E62C2DD82A01002198C4 /* FirebaseCore */; };
+		DD45E62F2DD82A01002198C4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = DD45E62E2DD82A01002198C4 /* FirebaseDatabase */; };
+		DD45E6312DD82A01002198C4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD45E6302DD82A01002198C4 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDC502852DD7A9DE00559D83 /* FirebaseDatabase in Frameworks */,
-				DDC502832DD7A9DE00559D83 /* FirebaseAppDistribution-Beta in Frameworks */,
+				DD45E62F2DD82A01002198C4 /* FirebaseDatabase in Frameworks */,
+				DD45E6312DD82A01002198C4 /* FirebaseFirestore in Frameworks */,
+				DD45E62D2DD82A01002198C4 /* FirebaseCore in Frameworks */,
+				DD45E62B2DD82A01002198C4 /* FirebaseAppDistribution-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +76,10 @@
 			);
 			name = LafiyaCare;
 			packageProductDependencies = (
-				DDC502822DD7A9DE00559D83 /* FirebaseAppDistribution-Beta */,
-				DDC502842DD7A9DE00559D83 /* FirebaseDatabase */,
+				DD45E62A2DD82A01002198C4 /* FirebaseAppDistribution-Beta */,
+				DD45E62C2DD82A01002198C4 /* FirebaseCore */,
+				DD45E62E2DD82A01002198C4 /* FirebaseDatabase */,
+				DD45E6302DD82A01002198C4 /* FirebaseFirestore */,
 			);
 			productName = "LafiyaCare-IOS";
 			productReference = DD482A492DD7788F00C16ED3 /* LafiyaCare.app */;
@@ -104,7 +110,7 @@
 			mainGroup = DD482A402DD7788F00C16ED3;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DDC502812DD7A9DE00559D83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				DD45E6292DD82A01002198C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DD482A4A2DD7788F00C16ED3 /* Products */;
@@ -280,7 +286,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = devcuit.net.LafiyaCare;
+				PRODUCT_BUNDLE_IDENTIFIER = "devcuit.net.LafiyaCare-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -310,7 +316,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = devcuit.net.LafiyaCare;
+				PRODUCT_BUNDLE_IDENTIFIER = "devcuit.net.LafiyaCare-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -342,7 +348,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DDC502812DD7A9DE00559D83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		DD45E6292DD82A01002198C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -353,15 +359,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DDC502822DD7A9DE00559D83 /* FirebaseAppDistribution-Beta */ = {
+		DD45E62A2DD82A01002198C4 /* FirebaseAppDistribution-Beta */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DDC502812DD7A9DE00559D83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = DD45E6292DD82A01002198C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAppDistribution-Beta";
 		};
-		DDC502842DD7A9DE00559D83 /* FirebaseDatabase */ = {
+		DD45E62C2DD82A01002198C4 /* FirebaseCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DDC502812DD7A9DE00559D83 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = DD45E6292DD82A01002198C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		DD45E62E2DD82A01002198C4 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD45E6292DD82A01002198C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		DD45E6302DD82A01002198C4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD45E6292DD82A01002198C4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

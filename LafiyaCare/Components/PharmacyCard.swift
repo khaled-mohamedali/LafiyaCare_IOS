@@ -8,11 +8,86 @@
 import SwiftUI
 
 struct PharmacyCard: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @State  var pharmacy: Pharmacy
+    
+       var body: some View {
+           VStack(alignment: .leading, spacing: 10) {
+               HStack {
+                   // Pharmacy icon
+                   Image("pharmacy_logo") // Replace with your asset name
+                       .resizable()
+                       .frame(width: 40, height: 40)
+                       .cornerRadius(8)
 
-#Preview {
-    PharmacyCard()
+                   VStack(alignment: .leading) {
+                       
+                       Text(pharmacy.name!)
+                           .font(.headline)
+                       
+                       // Open in Maps
+                       Button(action: {
+                           let lat = pharmacy.address?.latitude ?? 0.0
+                           let long = pharmacy.address?.longitude ?? 0.0
+                           
+                           if let url = URL(string: "http://maps.apple.com/?ll=\(lat),\(long)"){
+                               UIApplication.shared.open(url)
+                           }
+                          
+                          
+                       }) {
+                           HStack(spacing: 4) {
+                               Image(systemName: "mappin.and.ellipse")
+                               Text("Voir le trajet")
+                                   .font(.subheadline)
+                                   .foregroundColor(.blue)
+                           }
+                       }
+                   }
+
+                   Spacer()
+
+                   // Phone icon
+                   Button(action: {
+                       // Call action
+                   }) {
+                       Image(systemName: "phone.fill")
+                           .foregroundColor(.green)
+                           .padding(8)
+                           .background(Color(.systemGray6))
+                           .clipShape(Circle())
+                   }.padding(.bottom,20)
+               }
+
+               HStack {
+                   Image(systemName: "clock")
+                   Text("• \(pharmacy.openHours!)")
+                       .font(.subheadline)
+
+                   Spacer()
+
+                   if pharmacy.isEmergency! {
+                       Text("De Garde")
+                           .font(.caption)
+                           .foregroundColor(.white)
+                           .padding(6)
+                           .background(Color.red)
+                           .cornerRadius(6)
+                   }
+                      
+
+                   HStack(spacing: 4) {
+                       Image(systemName: "star.fill")
+                           .foregroundColor(.yellow)
+                       Text(String(pharmacy.rating!))
+                           .font(.subheadline)
+                   }
+               }
+               .foregroundColor(.secondary)
+           }
+           .padding()
+           .background(Color(.systemBackground))
+           .cornerRadius(12)
+           .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
+           
+       }
 }
