@@ -28,7 +28,12 @@ struct ContentView: View {
     var body: some View {
       
         VStack {
-            SearchBar(searchText: $searchText)
+            HStack(spacing: 0){
+                SearchBar(searchText: $searchText)
+                Image(systemName: "arrow.up.and.down.text.horizontal")
+                    .padding(.trailing,20)
+            }
+           
             Spacer()
             
             ScrollView{
