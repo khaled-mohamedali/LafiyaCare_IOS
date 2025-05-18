@@ -9,6 +9,9 @@ import SwiftUI
 
 struct PharmacyCard: View {
     @State  var pharmacy: Pharmacy
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+
     
        var body: some View {
            VStack(alignment: .leading, spacing: 10) {
@@ -21,7 +24,7 @@ struct PharmacyCard: View {
 
                    VStack(alignment: .leading) {
                        
-                       Text(pharmacy.name!)
+                       Text(pharmacy.name!.capitalized)
                            .font(.headline)
                        
                        // Open in Maps
@@ -29,7 +32,7 @@ struct PharmacyCard: View {
                            let lat = pharmacy.address?.latitude ?? 0.0
                            let long = pharmacy.address?.longitude ?? 0.0
                            
-                           if let url = URL(string: "http://maps.apple.com/?ll=\(lat),\(long)"){
+                           if let url = URL(string: "http://maps.apple.com/?daddr=\(lat),\(long)&dirflg=d"){
                                UIApplication.shared.open(url)
                            }
                           
@@ -49,6 +52,20 @@ struct PharmacyCard: View {
                    // Phone icon
                    Button(action: {
                        // Call action
+                       let phone = pharmacy.phone ?? ""
+                       
+                       if !phone.isEmpty{
+                           if let url = URL(string: "tel://\(phone)"){
+                               UIApplication.shared.open(url)
+                           }
+                       }else{
+                           alertMessage = "Pas de Numéro de Téléphone Disponible"
+                           showAlert = true
+                           
+                       }
+                       
+                   
+                       
                    }) {
                        Image(systemName: "phone.fill")
                            .foregroundColor(.green)
@@ -56,6 +73,9 @@ struct PharmacyCard: View {
                            .background(Color(.systemGray6))
                            .clipShape(Circle())
                    }.padding(.bottom,20)
+                       .alert(isPresented: $showAlert) {
+                           Alert(title: Text(alertMessage))
+                       }
                }
 
                HStack {
