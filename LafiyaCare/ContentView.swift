@@ -23,15 +23,18 @@ struct ContentView: View {
     }
     
     
-   
-   
     var body: some View {
       
         VStack {
             HStack(spacing: 0){
                 SearchBar(searchText: $searchText)
-                Image(systemName: "arrow.up.and.down.text.horizontal")
-                    .padding(.trailing,20)
+                
+                Button(action:{
+                    pharmacies.sort{$0.isEmergency! && !$1.isEmergency!}
+                }){
+                    Image(systemName: "arrow.up.and.down.text.horizontal")
+                        .padding(.trailing,20)
+                }
             }
            
             Spacer()
