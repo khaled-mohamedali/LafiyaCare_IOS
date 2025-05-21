@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PharmacyCard: View {
     @State  var pharmacy: Pharmacy
+    @State var emergencyPharmacies: [EmergencyPharmacy] = []
     @State private var showAlert = false
     @State private var alertMessage = ""
 
@@ -84,8 +85,8 @@ struct PharmacyCard: View {
                        .font(.subheadline)
 
                    Spacer()
-
-                   if pharmacy.isEmergency! {
+                   
+                   if pharmacy.isEmergency!{
                        Text("De Garde")
                            .font(.caption)
                            .foregroundColor(.white)
