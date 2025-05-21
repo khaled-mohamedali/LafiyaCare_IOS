@@ -23,5 +23,7 @@ class Pharmacy: Codable, Identifiable{
     var rating:Double?
     
 
-    
+    func setIsEmergency(_ isEmergency: Bool) {
+        self.isEmergency = isEmergency
+    }
 }
