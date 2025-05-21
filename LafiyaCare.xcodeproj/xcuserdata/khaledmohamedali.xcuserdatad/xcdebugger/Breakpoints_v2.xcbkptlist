@@ -90,11 +90,11 @@
                   endingLineNumber = "0">
                </Location>
                <Location
-                  uuid = "924082E9-9E2D-43D9-BD35-48B288F5DA36 - f7068e610b5ef42f"
+                  uuid = "924082E9-9E2D-43D9-BD35-48B288F5DA36 - e681ca1f5e210294"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "default argument 0 of LafiyaCare.ContentView.init(searchText: Swift.String, pharmacyViewModel: LafiyaCare.PharmacyViewModel, pharmacies: Swift.Array&lt;LafiyaCare.Pharmacy&gt;) -&gt; LafiyaCare.ContentView"
+                  symbolName = "default argument 0 of LafiyaCare.ContentView.init(searchText: Swift.String, pharmacyViewModel: LafiyaCare.PharmacyViewModel, pharmacies: Swift.Array&lt;LafiyaCare.Pharmacy&gt;, emergencyPharmacies: Swift.Array&lt;LafiyaCare.EmergencyPharmacy&gt;) -&gt; LafiyaCare.ContentView"
                   moduleName = "LafiyaCare.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/khaledmohamedali/Downloads/My_Projects/Mobile_Apps/IOS%20/LafiyaCare/LafiyaCare/ContentView.swift"

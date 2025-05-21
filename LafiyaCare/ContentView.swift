@@ -11,6 +11,8 @@ struct ContentView: View {
     @State  var searchText = ""
     @State var pharmacyViewModel = PharmacyViewModel()
     @State var pharmacies: [Pharmacy] = []
+    @State var emergencyPharmacies: [EmergencyPharmacy] = []
+
     
     var filteredPharmacies: [Pharmacy] {
         if searchText.isEmpty{
@@ -42,7 +44,7 @@ struct ContentView: View {
             ScrollView{
                 LazyVStack(spacing:5){
                     ForEach(filteredPharmacies){ pharmacy in
-                        PharmacyCard(pharmacy: pharmacy)
+                        PharmacyCard(pharmacy: pharmacy,emergencyPharmacies: emergencyPharmacies)
                             .padding([.horizontal,.top], 16)
                     }
                 }
@@ -52,6 +54,13 @@ struct ContentView: View {
             }
             .task {
                 pharmacies = await pharmacyViewModel.getData()
+                emergencyPharmacies = await pharmacyViewModel.fetchEmergencyPharmacies()
+                
+                for pharmacy in pharmacies {
+                    if let placeId = pharmacy.placeId , emergencyPharmacies.contains(where: { $0.id == placeId }){
+                        pharmacy.setIsEmergency(true)
+                    }
+                }
             }
         }
        

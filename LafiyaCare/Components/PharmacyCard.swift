@@ -85,7 +85,6 @@ struct PharmacyCard: View {
                        .font(.subheadline)
 
                    Spacer()
-                   
                    if pharmacy.isEmergency!{
                        Text("De Garde")
                            .font(.caption)
